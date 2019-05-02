@@ -14,26 +14,26 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="showFileName">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>70</y>
-      <width>55</width>
-      <height>16</height>
+      <x>40</x>
+      <y>0</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Test label</string>
+     <string>NowyLabel</string>
     </property>
    </widget>
    <widget class="QLabel" name="display_image">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>831</width>
-      <height>391</height>
+      <x>150</x>
+      <y>260</y>
+      <width>411</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="text">

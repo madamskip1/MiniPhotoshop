@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Test1
+TARGET = MiniPhotoshop
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        image.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        image.h \
         mainwindow.h
 
 FORMS += \

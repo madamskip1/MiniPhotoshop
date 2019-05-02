@@ -22,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
 //cv::Mat img= cv::imread("img.jpg");
 //cv::namedWindow("My Image");
 //cv::imshow("My Image", img);
+
+    ui->display_image->setText("qweq");
+  //  DisplayImage("D:\\download\\img.jpg");
 }
 
 MainWindow::~MainWindow()
@@ -41,7 +44,8 @@ ui->display_image->setPixmap(QPixmap::fromImage(imdisplay));
 void MainWindow::on_actionOpen_file_triggered()
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Otwórz plik");
-    DisplayImage(fileName);
+    mainImg = new Image(fileName);
+    mainImg->display(ui->display_image);
 }
 
 void MainWindow::on_actionSave_as_triggered()

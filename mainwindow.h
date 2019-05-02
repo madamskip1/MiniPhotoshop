@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <image.h>
 namespace Ui {
 class MainWindow;
 }
@@ -26,6 +26,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Image * mainImg;
 };
 
 #endif // MAINWINDOW_H
