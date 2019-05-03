@@ -24,8 +24,6 @@ private slots:
 
     void on_actionSave_as_triggered();
 
-    void on_actionBlur_triggered();
-
 private:
     Ui::MainWindow *ui;
     Image * mainImg;

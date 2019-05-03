@@ -25,22 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        blurmodal.cpp \
-        filter.cpp \
-        filter_blur.cpp \
         image.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
-        blurmodal.h \
-        filter.h \
-        filter_blur.h \
         image.h \
         mainwindow.h
 
 FORMS += \
-        blurmodal.ui \
         mainwindow.ui
 
 INCLUDEPATH += C:\Programy\opencv\build\include
