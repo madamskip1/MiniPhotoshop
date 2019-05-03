@@ -26,14 +26,16 @@ CONFIG += c++11
 
 SOURCES += \
         filter.cpp \
-        filter_blur.cpp \
+        filterblur.cpp \
+        filtergaussblur.cpp \
         image.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
         filter.h \
-        filter_blur.h \
+        filterblur.h \
+        filtergaussblur.h \
         image.h \
         mainwindow.h
 
