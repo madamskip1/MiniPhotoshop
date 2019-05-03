@@ -82,6 +82,7 @@
      <string>Filters</string>
     </property>
     <addaction name="actionBlur"/>
+    <addaction name="actionGaussian_Blur"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilters"/>
@@ -108,6 +109,11 @@
   <action name="actionBlur">
    <property name="text">
     <string>Blur</string>
+   </property>
+  </action>
+  <action name="actionGaussian_Blur">
+   <property name="text">
+    <string>Gaussian Blur</string>
    </property>
   </action>
  </widget>

@@ -26,6 +26,8 @@ private slots:
 
     void on_actionBlur_triggered();
 
+    void on_actionGaussian_Blur_triggered();
+
 private:
     Ui::MainWindow *ui;
     Image * mainImg;

@@ -7,7 +7,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
-#include "filter_blur.h"
+#include "filterblur.h"
+#include "filtergaussblur.h"
 
 using namespace cv;
 
@@ -52,9 +53,15 @@ void MainWindow::on_actionSave_as_triggered()
 
 void MainWindow::on_actionBlur_triggered()
 {
-    Filter* fil = new Filter_Blur(mainImg);
+    Filter* fil = new FilterBlur(mainImg);
     fil->exec();
 
     //mainImg->blur();
     //mainImg->display(ui->display_image);
+}
+
+void MainWindow::on_actionGaussian_Blur_triggered()
+{
+    Filter* fil = new FilterGaussBlur(mainImg);
+    fil->exec();
 }
