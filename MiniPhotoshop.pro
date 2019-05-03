@@ -25,11 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        filter.cpp \
+        filter_blur.cpp \
         image.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        filter.h \
+        filter_blur.h \
         image.h \
         mainwindow.h
 

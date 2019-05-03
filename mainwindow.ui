@@ -14,19 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="showFileName">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>0</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>NowyLabel</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="display_image">
     <property name="geometry">
      <rect>
@@ -38,6 +25,39 @@
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>200</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>70</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>190</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -57,7 +77,14 @@
     <addaction name="actionOpen_file"/>
     <addaction name="actionSave_as"/>
    </widget>
+   <widget class="QMenu" name="menuFilters">
+    <property name="title">
+     <string>Filters</string>
+    </property>
+    <addaction name="actionBlur"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuFilters"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -76,6 +103,11 @@
   <action name="actionSave_as">
    <property name="text">
     <string>Save as...</string>
+   </property>
+  </action>
+  <action name="actionBlur">
+   <property name="text">
+    <string>Blur</string>
    </property>
   </action>
  </widget>
