@@ -1,4 +1,4 @@
-#ifndef IM/AGE_H
+#ifndef IMAGE_H
 #define IMAGE_H
 #include <QString>
 #include <QImage>
@@ -14,6 +14,7 @@ private:
     cv::Mat img;
     cv::Mat imgRgb;
     QImage * qtImg;
+    QLabel* displayLabel;
 
     void loadImg();
     void convertToQT();
@@ -21,8 +22,12 @@ public:
     void save();
     void saveAs(QString);
     Image();
-    Image(QString);
-    void display(QLabel*);
+    Image(QString, QLabel* = nullptr);
+    void display(QLabel* = nullptr);
+    void blur();
+
+    void setDisplay(QLabel*);
+    cv::Mat* getImg();
 };
 
 #endif // IMAGE_H
