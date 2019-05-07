@@ -7,10 +7,15 @@ Mouse::Mouse(DisplayImageLabel* dl, Image* img) :
 {
     image = img;
     connect(displayLabel, &DisplayImageLabel::mouseLeftClick, this, &Mouse::mousePressed);
-    connect(displayLabel, &DisplayImageLabel::mouseMove, this, &Mouse::mouseMoved);
+//    connect(displayLabel, &DisplayImageLabel::mouseMove, this, &Mouse::mouseMoved);
 }
 
 Mouse::~Mouse()
+{
+
+}
+
+void Mouse::setSize(int)
 {
 
 }
@@ -26,6 +31,7 @@ void Mouse::mousePressed(QMouseEvent * ev)
     int x = ev->x();
     int y = ev->y();
     leftClick(x, y);
+    return;
 //    rubber(x, y);
 
 //    image->display();

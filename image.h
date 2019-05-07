@@ -41,9 +41,13 @@ public:
     bool isTransparent();
     void setTransparent(bool);
     void setTransparent(int);
+    int getWidth();
+    int getHeight();
+
     bool isImgArea(int, int);
     bool isImgAreaX(int);
     bool isImgAreaY(int);
+
 public slots:
     void displaySlot(QLabel* = nullptr);
 };

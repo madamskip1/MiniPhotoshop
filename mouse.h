@@ -24,6 +24,7 @@ public:
     Mouse(DisplayImageLabel*, Image*);
     ~Mouse();
 
+    virtual void setSize(int);
 protected:
     DisplayImageLabel * displayLabel;
     Image* image;

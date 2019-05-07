@@ -25,7 +25,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        cannyedgedetection.cpp \
         displayimagelabel.cpp \
         filter.cpp \
         filterblur.cpp \
@@ -37,7 +36,6 @@ SOURCES += \
         rubber.cpp
 
 HEADERS += \
-        cannyedgedetection.h \
         displayimagelabel.h \
         filter.h \
         filterblur.h \

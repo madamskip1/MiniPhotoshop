@@ -1,6 +1,6 @@
 #include "image.h"
 #include <QImage>
-
+#include <QDebug>
 Image::Image()
 {
     qtImg = nullptr;
@@ -17,6 +17,9 @@ Image::Image(QString _path, QLabel* disp) :
 void Image::loadImg()
 {
     img = cv::imread(path.toStdString());
+    width = img.cols;
+    height = img.rows;
+    qDebug() << width << " - " << height;
     cv::cvtColor(img,img, cv::COLOR_BGR2BGRA);
 }
 void Image::convertToQT()
@@ -103,13 +106,35 @@ void Image::setTransparent(int trans)
     else transparent = false;
 }
 
+int Image::getWidth()
+{
+    return width;
+}
+
+int Image::getHeight()
+{
+    return height;
+}
+
+// Getters and Setters end
+
 bool Image::isImgArea(int x, int y)
 {
     if(x >= 0 && y >= 0 && x < width && y < height) return true;
     return false;
 }
 
-// Getters and Setters end
+bool Image::isImgAreaX(int x)
+{
+    if (x >= 0 && x < width) return true;
+    else return false;
+}
+
+bool Image::isImgAreaY(int y)
+{
+    if (y >= 0 && y < height) return true;
+    else return false;
+}
 
 void Image::displaySlot(QLabel * _label)
 {

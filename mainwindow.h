@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <image.h>
+#include "image.h"
+#include "mouse.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -32,9 +34,14 @@ private slots:
 
     void on_actiontest_triggered();
 
+    void on_actionSquare_triggered();
+
+    void on_actionCircle_triggered();
+
 private:
     Ui::MainWindow *ui;
     Image * mainImg;
+    Mouse * mouse;
 };
 
 #endif // MAINWINDOW_H

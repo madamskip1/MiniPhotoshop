@@ -8,6 +8,7 @@
 #include "filterblur.h"
 #include "filtergaussblur.h"
 #include "mouse.h"
+#include "rubber.h"
 
 using namespace cv;
 
@@ -24,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
     mainImg->setDisplay(ui->display_image);
     mainImg->load();
     mainImg->display();
-    Mouse * mouse = new Mouse(this->ui->display_image, mainImg);
+   // Mouse * mouse = new Mouse(this->ui->display_image, mainImg);
 //    connect(ui->display_image, &DisplayImageLabel::mouseLeftClick, mouse, &Mouse::mousePressed);
 }
 
@@ -81,6 +82,18 @@ void MainWindow::on_actionCanny_triggered()
 }
 
 void MainWindow::on_actiontest_triggered()
+{
+
+}
+
+void MainWindow::on_actionSquare_triggered()
+{
+    delete mouse;
+    mouse = new Rubber(ui->display_image, mainImg, Brushes::Square);
+    mouse->setSize(35);
+}
+
+void MainWindow::on_actionCircle_triggered()
 {
 
 }
