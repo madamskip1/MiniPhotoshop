@@ -11,53 +11,48 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>MiniPhotoshop</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="display_image">
+   <widget class="DisplayImageLabel" name="display_image">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>260</y>
+      <x>160</x>
+      <y>230</y>
       <width>411</width>
       <height>91</height>
      </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
     </property>
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>200</y>
-      <width>160</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLabel" name="mousePos">
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>70</y>
-      <width>113</width>
-      <height>22</height>
+      <y>110</y>
+      <width>261</width>
+      <height>51</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>190</y>
-      <width>42</width>
-      <height>22</height>
-     </rect>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>
@@ -84,16 +79,36 @@
     <addaction name="actionBlur"/>
     <addaction name="actionGaussian_Blur"/>
    </widget>
+   <widget class="QMenu" name="menuInne">
+    <property name="title">
+     <string>Inne</string>
+    </property>
+    <addaction name="actionCanny"/>
+   </widget>
+   <widget class="QMenu" name="menutest">
+    <property name="title">
+     <string>test</string>
+    </property>
+    <addaction name="actiontest"/>
+   </widget>
+   <widget class="QMenu" name="menuBrush">
+    <property name="title">
+     <string>Brush</string>
+    </property>
+    <widget class="QMenu" name="menuRubber">
+     <property name="title">
+      <string>Rubber</string>
+     </property>
+     <addaction name="actionCircle"/>
+     <addaction name="actionSquare"/>
+    </widget>
+    <addaction name="menuRubber"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilters"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
+   <addaction name="menuInne"/>
+   <addaction name="menutest"/>
+   <addaction name="menuBrush"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionOpen_file">
@@ -116,8 +131,35 @@
     <string>Gaussian Blur</string>
    </property>
   </action>
+  <action name="actionCanny">
+   <property name="text">
+    <string>Canny Edge Detection</string>
+   </property>
+  </action>
+  <action name="actiontest">
+   <property name="text">
+    <string>test</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionSquare">
+   <property name="text">
+    <string>Square</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>DisplayImageLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">displayimagelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

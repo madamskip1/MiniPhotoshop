@@ -37,8 +37,8 @@ void FilterBlur::createOptionBox()
 void FilterBlur::applyFilter()
 {
     cv::Size s = cv::Size(valBox->value(), valBox->value());
-    cv::Mat *im = img->getImg();
-    cv::blur(*im, *im, s);
+    cv::Mat im = img->getImg();
+    cv::blur(im, im, s);
     img->display();
     close();
 }

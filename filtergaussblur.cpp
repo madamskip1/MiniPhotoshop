@@ -61,8 +61,8 @@ void FilterGaussBlur::applyFilter()
     if (val % 2 == 0) val += 1;
 
     cv::Size s = cv::Size(val, val);
-    cv::Mat *im = img->getImg();
-    cv::GaussianBlur(*im, *im, s, devValBox->value());
+    cv::Mat im = img->getImg();
+    cv::GaussianBlur(im, im, s, devValBox->value());
     img->display();
     close();
 }

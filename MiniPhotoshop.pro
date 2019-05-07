@@ -25,19 +25,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        cannyedgedetection.cpp \
+        displayimagelabel.cpp \
         filter.cpp \
         filterblur.cpp \
         filtergaussblur.cpp \
         image.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        mouse.cpp \
+        rubber.cpp
 
 HEADERS += \
+        cannyedgedetection.h \
+        displayimagelabel.h \
         filter.h \
         filterblur.h \
         filtergaussblur.h \
         image.h \
-        mainwindow.h
+        mainwindow.h \
+        mouse.h \
+        rubber.h
 
 FORMS += \
         mainwindow.ui

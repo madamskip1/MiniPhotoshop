@@ -28,6 +28,10 @@ private slots:
 
     void on_actionGaussian_Blur_triggered();
 
+    void on_actionCanny_triggered();
+
+    void on_actiontest_triggered();
+
 private:
     Ui::MainWindow *ui;
     Image * mainImg;
