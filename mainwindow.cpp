@@ -9,6 +9,7 @@
 #include "filtergaussblur.h"
 #include "mouse.h"
 #include "rubber.h"
+#include "brush.h"
 
 using namespace cv;
 
@@ -95,5 +96,13 @@ void MainWindow::on_actionSquare_triggered()
 
 void MainWindow::on_actionCircle_triggered()
 {
+    delete mouse;
+    mouse = new Rubber(ui->display_image, mainImg);
+    mouse->setSize(40);
+}
 
+void MainWindow::on_actioncircle_triggered()
+{
+    delete mouse;
+    mouse = new Brush(ui->display_image, mainImg);
 }

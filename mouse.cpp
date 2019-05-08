@@ -1,13 +1,12 @@
 #include "mouse.h"
 #include <QDebug>
-#include "opencv2/opencv.hpp"
 
-Mouse::Mouse(DisplayImageLabel* dl, Image* img) :
-    displayLabel(dl)//, image(img)
+Mouse::Mouse(DisplayImageLabel* dl, Image* img, Brushes brush) :
+    displayLabel(dl), image(img), brushType(brush)
 {
-    image = img;
+
     connect(displayLabel, &DisplayImageLabel::mouseLeftClick, this, &Mouse::mousePressed);
-//    connect(displayLabel, &DisplayImageLabel::mouseMove, this, &Mouse::mouseMoved);
+    connect(displayLabel, &DisplayImageLabel::mouseMove, this, &Mouse::mouseMoved);
 }
 
 Mouse::~Mouse()
@@ -15,9 +14,66 @@ Mouse::~Mouse()
 
 }
 
+void Mouse::setBrushType(Brushes brush)
+{
+    brushType = brush;
+}
+
 void Mouse::setSize(int)
 {
 
+}
+
+cv::Scalar Mouse::calcMinMax(cv::Scalar minMax)
+{
+    if (!image->isImgAreaX(minMax[0]))
+    {
+        if (minMax[0] < 0) minMax[0] = 0;
+        else
+        {
+            minMax[0] = -1;
+            return minMax;
+        }
+    }
+
+    if (!image->isImgAreaX(minMax[1]))
+    {
+        if (minMax[1] < 0)
+        {
+            minMax[1] = -1;
+            return minMax;
+        } else minMax[1] = image->getWidth();
+    }
+
+    if (!image->isImgAreaY(minMax[2]))
+    {
+        if (minMax[2] < 0) minMax[2] = 0;
+        else
+        {
+            minMax[2] = -1;
+            return minMax;
+        }
+    }
+
+    if (!image->isImgAreaY(minMax[3]))
+    {
+        if (minMax[3] < 0)
+        {
+            minMax[3] = -1;
+            return minMax;
+        } else minMax[3] = image->getHeight() - 1;
+    }
+
+    return minMax;
+}
+
+bool Mouse::isMinMax(cv::Scalar minMax)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (minMax[i] == -1) return false;
+    }
+    return true;
 }
 
 void Mouse::leftClick(int, int)
@@ -25,18 +81,24 @@ void Mouse::leftClick(int, int)
 
 }
 
+void Mouse::leftMove(int, int)
+{
+
+}
+
 void Mouse::mousePressed(QMouseEvent * ev)
 {
-    cv::Mat img = image->getImg();
+    //cv::Mat img = image->getImg();
     int x = ev->x();
     int y = ev->y();
+
     leftClick(x, y);
     return;
 //    rubber(x, y);
 
 //    image->display();
 //    return;
-
+    cv::Mat img = image->getImg();
     cv::Mat overlay;
     double alpha = 0.4;
     img.copyTo(overlay);
@@ -52,10 +114,15 @@ void Mouse::mousePressed(QMouseEvent * ev)
 
 void Mouse::mouseMoved(QMouseEvent * ev)
 {
-    if(!(ev->buttons() & Qt::LeftButton)) return;
-    cv::Mat img = image->getImg();
     int x = ev->x();
     int y = ev->y();
+
+    if(ev->buttons() & Qt::LeftButton) leftMove(x, y);
+
+    return;
+    if(!(ev->buttons() & Qt::LeftButton)) return;
+    cv::Mat img = image->getImg();
+
 
     //rubber(x, y);
 

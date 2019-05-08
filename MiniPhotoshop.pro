@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        brush.cpp \
         displayimagelabel.cpp \
         filter.cpp \
         filterblur.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
         rubber.cpp
 
 HEADERS += \
+        brush.h \
         displayimagelabel.h \
         filter.h \
         filterblur.h \

@@ -102,7 +102,14 @@
      <addaction name="actionCircle"/>
      <addaction name="actionSquare"/>
     </widget>
+    <widget class="QMenu" name="menuBrush_2">
+     <property name="title">
+      <string>Brush</string>
+     </property>
+     <addaction name="actioncircle"/>
+    </widget>
     <addaction name="menuRubber"/>
+    <addaction name="menuBrush_2"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilters"/>
@@ -149,6 +156,11 @@
   <action name="actionSquare">
    <property name="text">
     <string>Square</string>
+   </property>
+  </action>
+  <action name="actioncircle">
+   <property name="text">
+    <string>circle</string>
    </property>
   </action>
  </widget>

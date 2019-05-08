@@ -38,6 +38,8 @@ private slots:
 
     void on_actionCircle_triggered();
 
+    void on_actioncircle_triggered();
+
 private:
     Ui::MainWindow *ui;
     Image * mainImg;

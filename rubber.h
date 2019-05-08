@@ -8,16 +8,16 @@ class Rubber : public Mouse
 {
 private:
     int size;
-    Brushes brushType;
 public:
-    Rubber(DisplayImageLabel*, Image*, Brushes = Brushes::Square, int = 0);
+    Rubber(DisplayImageLabel*, Image*, Brushes = Brushes::Circle, int = 0);
     ~Rubber();
 
     void setSize(int);
 private:
     void leftClick(int, int);
+    void leftMove(int, int);
     void squareRubber(int, int);
-    void circleRubber();
+    void circleRubber(int, int);
 };
 
 #endif // RUBBER_H
