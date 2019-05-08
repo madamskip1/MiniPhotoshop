@@ -12,12 +12,14 @@ public:
     explicit DisplayImageLabel(QWidget *parent = nullptr);
     void mousePressEvent(QMouseEvent*);
     void mouseMoveEvent(QMouseEvent*);
-
+    void mouseReleaseEvent(QMouseEvent*);
 signals:
     void mouseLeftClick(QMouseEvent*);
     void mouseRightClick(QMouseEvent*);
     void mouseMiddleClick(QMouseEvent*);
     void mouseMove(QMouseEvent*);
+    void mouseLeftRelease(QMouseEvent*);
+    void mouseRightRelease(QMouseEvent*);
 public slots:
 
 };

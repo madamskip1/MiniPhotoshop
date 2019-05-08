@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
         brush.cpp \
         displayimagelabel.cpp \
+        draw.cpp \
         filter.cpp \
         filterblur.cpp \
         filtergaussblur.cpp \
@@ -39,6 +40,7 @@ SOURCES += \
 HEADERS += \
         brush.h \
         displayimagelabel.h \
+        draw.h \
         filter.h \
         filterblur.h \
         filtergaussblur.h \

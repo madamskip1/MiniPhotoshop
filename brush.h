@@ -9,7 +9,7 @@ private:
     double opacity;
     int size;
 public:
-    Brush(DisplayImageLabel*, Image*, Brushes = Brushes::Circle);
+    Brush(DisplayImageLabel*, Image*);
     void setSize(int);
 
 private:

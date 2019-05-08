@@ -40,6 +40,12 @@ private slots:
 
     void on_actioncircle_triggered();
 
+    void on_actionOff_triggered();
+
+    void on_actionDraw_triggered();
+
+    void on_actionpicke_triggered();
+
 private:
     Ui::MainWindow *ui;
     Image * mainImg;

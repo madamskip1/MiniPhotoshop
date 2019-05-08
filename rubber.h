@@ -8,8 +8,9 @@ class Rubber : public Mouse
 {
 private:
     int size;
+    Shapes brushType;
 public:
-    Rubber(DisplayImageLabel*, Image*, Brushes = Brushes::Circle, int = 0);
+    Rubber(DisplayImageLabel*, Image*, Shapes = Shapes::Circle, int = 0);
     ~Rubber();
 
     void setSize(int);

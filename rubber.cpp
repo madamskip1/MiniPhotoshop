@@ -2,8 +2,8 @@
 #include "rubber.h"
 #include <QDebug>
 
-Rubber::Rubber(DisplayImageLabel * dl, Image * img, Brushes brush, int _size) :
-    Mouse(dl, img, brush),  size(_size)
+Rubber::Rubber(DisplayImageLabel * dl, Image * img, Shapes brush, int _size) :
+    Mouse(dl, img),  size(_size), brushType(brush)
 {
     qDebug() << "Rubber: on";
 }
@@ -20,13 +20,12 @@ void Rubber::setSize(int _size)
 
 void Rubber::leftClick(int x, int y)
 {
-    qDebug() << "rubber rubber rubber!!!!";
     switch(brushType)
     {
-        case Brushes::Square:
+        case Shapes::Square:
             squareRubber(x, y);
             break;
-        case Brushes::Circle:
+        case Shapes::Circle:
             circleRubber(x, y);
             break;
     }

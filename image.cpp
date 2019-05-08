@@ -14,6 +14,13 @@ Image::Image(QString _path, QLabel* disp) :
     loadImg();
 }
 
+//Image::Image(const Image &obj)
+//{
+
+//}
+
+
+
 void Image::loadImg()
 {
     img = cv::imread(path.toStdString());
@@ -79,6 +86,12 @@ cv::Mat Image::getImg()
 {
     return img;
 }
+
+void Image::cloneImg(cv::Mat obj)
+{
+    img = obj.clone();
+}
+
 
 cv::Scalar Image::getBackgroundColor()
 {

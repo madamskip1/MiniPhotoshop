@@ -17,8 +17,8 @@
    <widget class="DisplayImageLabel" name="display_image">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>230</y>
+      <x>210</x>
+      <y>220</y>
       <width>411</width>
       <height>91</height>
      </rect>
@@ -93,7 +93,7 @@
    </widget>
    <widget class="QMenu" name="menuBrush">
     <property name="title">
-     <string>Brush</string>
+     <string>Mouse</string>
     </property>
     <widget class="QMenu" name="menuRubber">
      <property name="title">
@@ -110,12 +110,23 @@
     </widget>
     <addaction name="menuRubber"/>
     <addaction name="menuBrush_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionDraw"/>
+    <addaction name="separator"/>
+    <addaction name="actionOff"/>
+   </widget>
+   <widget class="QMenu" name="menucolorPicker">
+    <property name="title">
+     <string>colorPicker</string>
+    </property>
+    <addaction name="actionpicke"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilters"/>
    <addaction name="menuInne"/>
    <addaction name="menutest"/>
    <addaction name="menuBrush"/>
+   <addaction name="menucolorPicker"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionOpen_file">
@@ -161,6 +172,21 @@
   <action name="actioncircle">
    <property name="text">
     <string>circle</string>
+   </property>
+  </action>
+  <action name="actionOff">
+   <property name="text">
+    <string>Off</string>
+   </property>
+  </action>
+  <action name="actionDraw">
+   <property name="text">
+    <string>Draw</string>
+   </property>
+  </action>
+  <action name="actionpicke">
+   <property name="text">
+    <string>picker</string>
    </property>
   </action>
  </widget>

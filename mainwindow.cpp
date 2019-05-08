@@ -10,6 +10,7 @@
 #include "mouse.h"
 #include "rubber.h"
 #include "brush.h"
+#include "draw.h"
 
 using namespace cv;
 
@@ -90,7 +91,7 @@ void MainWindow::on_actiontest_triggered()
 void MainWindow::on_actionSquare_triggered()
 {
     delete mouse;
-    mouse = new Rubber(ui->display_image, mainImg, Brushes::Square);
+    mouse = new Rubber(ui->display_image, mainImg, Shapes::Square);
     mouse->setSize(35);
 }
 
@@ -105,4 +106,21 @@ void MainWindow::on_actioncircle_triggered()
 {
     delete mouse;
     mouse = new Brush(ui->display_image, mainImg);
+}
+
+void MainWindow::on_actionOff_triggered()
+{
+    delete mouse;
+}
+
+void MainWindow::on_actionDraw_triggered()
+{
+    delete mouse;
+    mouse = new Draw(ui->display_image, mainImg);
+}
+
+void MainWindow::on_actionpicke_triggered()
+{
+    QColor color = QColorDialog::getColor();
+    qDebug() << color.name();
 }

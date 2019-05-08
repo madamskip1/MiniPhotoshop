@@ -1,4 +1,4 @@
-#ifndef IMAGE_H
+﻿#ifndef IMAGE_H
 #define IMAGE_H
 #include <QString>
 #include <QImage>
@@ -24,6 +24,8 @@ private:
 public:
     Image();
     Image(QString, QLabel* = nullptr);
+   // Image(cv::Mat, QLabel* = nullptr);
+    //Image(const Image &obj);
 
     void save();
     void saveAs(QString);
@@ -36,6 +38,9 @@ public:
     void setPath(QString);
     QString getPath();
     cv::Mat getImg();
+    void cloneImg(cv::Mat);
+
+
     cv::Scalar getBackgroundColor();
     void setBackgroundColor(cv::Scalar);
     bool isTransparent();
@@ -47,6 +52,7 @@ public:
     bool isImgArea(int, int);
     bool isImgAreaX(int);
     bool isImgAreaY(int);
+
 
 public slots:
     void displaySlot(QLabel* = nullptr);

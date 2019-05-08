@@ -8,7 +8,7 @@
 #include "displayimagelabel.h"
 #include "image.h"
 
-enum class Brushes
+enum class Shapes
 {
     Circle,
     Square,
@@ -22,24 +22,23 @@ Q_OBJECT
 signals:
   //  void mousePressed(QPoint*);
 public:
-    Mouse(DisplayImageLabel*, Image*, Brushes = Brushes::Circle);
+    Mouse(DisplayImageLabel*, Image*);
     ~Mouse();
 
-    void setBrushType(Brushes);
     virtual void setSize(int);
 protected:
     DisplayImageLabel * displayLabel;
     Image* image;
-    Brushes brushType;
     cv::Scalar calcMinMax(cv::Scalar);
 
     bool isMinMax(cv::Scalar);
     virtual void leftClick(int, int);
     virtual void leftMove(int, int);
+    virtual void leftRelease(int, int);
 public slots:
     void mousePressed(QMouseEvent*);
     void mouseMoved(QMouseEvent*);
-
+    void mouseRelease(QMouseEvent*);
 private:
     void rubber(int, int);
 };

@@ -1,22 +1,18 @@
 #include "mouse.h"
 #include <QDebug>
 
-Mouse::Mouse(DisplayImageLabel* dl, Image* img, Brushes brush) :
-    displayLabel(dl), image(img), brushType(brush)
+Mouse::Mouse(DisplayImageLabel* dl, Image* img) :
+    displayLabel(dl), image(img)
 {
 
     connect(displayLabel, &DisplayImageLabel::mouseLeftClick, this, &Mouse::mousePressed);
     connect(displayLabel, &DisplayImageLabel::mouseMove, this, &Mouse::mouseMoved);
+    connect(displayLabel, &DisplayImageLabel::mouseLeftRelease, this, &Mouse::mouseRelease);
 }
 
 Mouse::~Mouse()
 {
 
-}
-
-void Mouse::setBrushType(Brushes brush)
-{
-    brushType = brush;
 }
 
 void Mouse::setSize(int)
@@ -86,6 +82,11 @@ void Mouse::leftMove(int, int)
 
 }
 
+void Mouse::leftRelease(int, int)
+{
+
+}
+
 void Mouse::mousePressed(QMouseEvent * ev)
 {
     //cv::Mat img = image->getImg();
@@ -140,6 +141,14 @@ void Mouse::mouseMoved(QMouseEvent * ev)
     cv::addWeighted(overlay, alpha, img, 1-alpha, 0, img);
 
     image->display();
+}
+
+void Mouse::mouseRelease(QMouseEvent * ev)
+{
+    int x = ev->x();
+    int y = ev->y();
+
+    leftRelease(x, y);
 }
 
 void Mouse::rubber(int x, int y)

@@ -20,6 +20,19 @@ void DisplayImageLabel::mousePressEvent(QMouseEvent * ev)
 void DisplayImageLabel::mouseMoveEvent(QMouseEvent * ev)
 {
     emit mouseMove(ev);
-    //qDebug() << ev->buttons();
-   // if(!(ev->buttons() & Qt::LeftButton)) return;
+}
+
+void DisplayImageLabel::mouseReleaseEvent(QMouseEvent * ev)
+{
+    switch(ev->button())
+    {
+    case Qt::LeftButton:
+        emit mouseLeftRelease(ev);
+        break;
+    case Qt::RightButton:
+        emit mouseRightRelease(ev);
+        break;
+    default:
+        break;
+    }
 }
