@@ -39,22 +39,6 @@
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="mousePos">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>110</y>
-      <width>261</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Panel</enum>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -108,10 +92,17 @@
      </property>
      <addaction name="actioncircle"/>
     </widget>
+    <widget class="QMenu" name="menuDraw">
+     <property name="title">
+      <string>Draw</string>
+     </property>
+     <addaction name="actionSquare_2"/>
+     <addaction name="actionCircle_2"/>
+    </widget>
     <addaction name="menuRubber"/>
     <addaction name="menuBrush_2"/>
     <addaction name="separator"/>
-    <addaction name="actionDraw"/>
+    <addaction name="menuDraw"/>
     <addaction name="separator"/>
     <addaction name="actionOff"/>
    </widget>
@@ -179,14 +170,19 @@
     <string>Off</string>
    </property>
   </action>
-  <action name="actionDraw">
-   <property name="text">
-    <string>Draw</string>
-   </property>
-  </action>
   <action name="actionpicke">
    <property name="text">
     <string>picker</string>
+   </property>
+  </action>
+  <action name="actionSquare_2">
+   <property name="text">
+    <string>Square</string>
+   </property>
+  </action>
+  <action name="actionCircle_2">
+   <property name="text">
+    <string>Circle</string>
    </property>
   </action>
  </widget>

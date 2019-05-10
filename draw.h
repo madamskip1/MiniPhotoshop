@@ -11,12 +11,16 @@ private:
     Shapes shape;
     cv::Scalar color;
 public:
-    Draw(DisplayImageLabel*, Image*);
+    Draw(DisplayImageLabel*, Image*, Shapes = Shapes::Square);
 
 private:
     void leftClick(int, int);
     void leftMove(int, int);
     void leftRelease(int, int);
+
+    void drawRectangle(cv::Mat, cv::Point);
+    void drawCircle(cv::Mat, cv::Point);
+    void drawEllipse(cv::Mat, cv::Point);
 };
 
 #endif // DRAW_H

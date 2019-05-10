@@ -115,12 +115,24 @@ void MainWindow::on_actionOff_triggered()
 
 void MainWindow::on_actionDraw_triggered()
 {
-    delete mouse;
-    mouse = new Draw(ui->display_image, mainImg);
+//    delete mouse;
+//    mouse = new Draw(ui->display_image, mainImg);
 }
 
 void MainWindow::on_actionpicke_triggered()
 {
     QColor color = QColorDialog::getColor();
     qDebug() << color.name();
+}
+
+void MainWindow::on_actionSquare_2_triggered()
+{
+    delete mouse;
+    mouse = new Draw(ui->display_image, mainImg, Shapes::Square);
+}
+
+void MainWindow::on_actionCircle_2_triggered()
+{
+    delete mouse;
+    mouse = new Draw(ui->display_image, mainImg, Shapes::Circle);
 }

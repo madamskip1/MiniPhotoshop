@@ -46,6 +46,10 @@ private slots:
 
     void on_actionpicke_triggered();
 
+    void on_actionSquare_2_triggered();
+
+    void on_actionCircle_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     Image * mainImg;

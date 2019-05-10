@@ -12,7 +12,7 @@ enum class Shapes
 {
     Circle,
     Square,
-
+    Ellipse
 };
 
 class Mouse : public QLabel

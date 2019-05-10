@@ -22,6 +22,7 @@ Image::Image(QString _path, QLabel* disp) :
 
 
 void Image::loadImg()
+
 {
     img = cv::imread(path.toStdString());
     width = img.cols;
