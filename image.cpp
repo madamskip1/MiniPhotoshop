@@ -7,6 +7,7 @@
  */
 Image::Image()
 {
+    qDebug() << "Image::Image()";
     qtImg = nullptr;
 }
 
@@ -20,9 +21,7 @@ Image::Image()
  */
 Image::Image(QString _path, QLabel* disp) :
     path(_path), displayLabel(disp), transparent(false)
-{
-    qtImg = nullptr;
-   // displayLabel = disp;
+{    qtImg = nullptr;
     loadImg();
 }
 
@@ -88,6 +87,7 @@ void Image::display(QLabel * _label)
     convertToQT();
     if(_label != nullptr)_label->setPixmap(QPixmap::fromImage(*qtImg));
     else displayLabel->setPixmap(QPixmap::fromImage(*qtImg));
+
 }
 
 /**
@@ -167,6 +167,7 @@ cv::Mat Image::getImg()
  */
 void Image::cloneImg(cv::Mat obj)
 {
+    qtImg = nullptr;
     img = obj.clone();
 }
 

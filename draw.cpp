@@ -1,11 +1,10 @@
 #include "draw.h"
 
-Draw::Draw(DisplayImageLabel* dl, Image* img, Shapes _shape) :
-    Mouse(dl, img)
+Draw::Draw(DisplayImageLabel* dl, Image* img, cv::Scalar _color, Shapes _shape) :
+    Mouse(dl, img),  shape(_shape), color(_color)
 {
+    qDebug() << "draw" << _color[0] << _color[1]<<_color[2];
     qDebug() << "Draw: on";
-    color = cv::Scalar(18, 35, 200, 255);
-    shape = _shape;
 }
 
 /**
@@ -83,7 +82,6 @@ void Draw::leftRelease(int x, int y)
 void Draw::drawRectangle(cv::Mat img, cv::Point p)
 {
     cv::rectangle(img, startPoint, p, color, -1);
-    qDebug()<<"draw rectangle";
 }
 
 /**

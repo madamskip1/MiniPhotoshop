@@ -11,7 +11,7 @@ private:
     Shapes shape;   /**< enum to determinate shape to draw */
     cv::Scalar color;
 public:
-    Draw(DisplayImageLabel*, Image*, Shapes = Shapes::Square);
+    Draw(DisplayImageLabel*, Image*, cv::Scalar=cv::Scalar(255, 255, 255), Shapes = Shapes::Square);
 
 private:
     void leftClick(int, int);

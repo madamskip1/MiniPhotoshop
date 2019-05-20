@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->mainWidget->setLayout(ui->horizontalLayout);
     this->setCentralWidget(ui->mainWidget);
     ui->display_image->setText("qweq");
-    ui->menu->setLayout(ui->menuGrid);
+    //ui->menuWidget->setLayout(ui->menuGrid);
 
     // Create Image object. Load default img.
     mainImg = new Image();
@@ -30,11 +30,19 @@ MainWindow::MainWindow(QWidget *parent) :
     mainImg->setDisplay(ui->display_image);
     mainImg->load();
     mainImg->display();
+
+    mouse = nullptr;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::deleteMouse()
+{
+    delete mouse;
+    mouse = nullptr;
 }
 
 void MainWindow::on_actionOpen_file_triggered()
@@ -82,27 +90,27 @@ void MainWindow::on_actiontest_triggered()
 
 void MainWindow::on_actionSquare_triggered()
 {
-    delete mouse;
+    deleteMouse();
     mouse = new Rubber(ui->display_image, mainImg, Shapes::Square);
     mouse->setSize(35);
 }
 
 void MainWindow::on_actionCircle_triggered()
 {
-    delete mouse;
+    deleteMouse();
     mouse = new Rubber(ui->display_image, mainImg);
     mouse->setSize(40);
 }
 
 void MainWindow::on_actioncircle_triggered()
 {
-    delete mouse;
+    deleteMouse();
     mouse = new Brush(ui->display_image, mainImg);
 }
 
 void MainWindow::on_actionOff_triggered()
 {
-    delete mouse;
+    deleteMouse();
 }
 
 void MainWindow::on_actionDraw_triggered()
@@ -119,17 +127,57 @@ void MainWindow::on_actionpicke_triggered()
 
 void MainWindow::on_actionSquare_2_triggered()
 {
-    delete mouse;
-    mouse = new Draw(ui->display_image, mainImg, Shapes::Square);
+    deleteMouse();
+    mouse = new Draw(ui->display_image, mainImg, color, Shapes::Square);
 }
 
 void MainWindow::on_actionCircle_2_triggered()
 {
-    delete mouse;
-    mouse = new Draw(ui->display_image, mainImg, Shapes::Circle);
+    deleteMouse();
+    mouse = new Draw(ui->display_image, mainImg, color, Shapes::Circle);
 }
+
+
+/********************************************
+ *               Menu Buttons               *
+ ********************************************/
+
 
 void MainWindow::on_drawButton_clicked()
 {
-    qDebug() << "Draw clicked";
+    deleteMouse();
+    mouse = new Draw(ui->display_image, mainImg, color,  Shapes::Square);
+
+    // TODO: open menu to choose shape
+}
+
+void MainWindow::on_brushButton_clicked()
+{
+    deleteMouse();
+    mouse = new Brush(ui->display_image, mainImg);
+
+    // TODO: open menu to choose shape
+}
+
+void MainWindow::on_rubberButton_clicked()
+{
+    deleteMouse();
+    mouse = new Rubber(ui->display_image, mainImg, Shapes::Square);
+    mouse->setSize(35);
+}
+
+void MainWindow::on_colorShow_clicked()
+{
+    qDebug() << "clicked";
+    QColor colorPick = QColorDialog::getColor();
+    int r, g, b;
+    colorPick.getRgb(&r, &g, &b);
+
+    qDebug() << r << g << b;
+    QString style = "background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");";
+    style = style + "border: 1px solid white;";
+
+    ui->colorShow->setStyleSheet(style);
+    color = cv::Scalar(b, g, r, 255);
+    qDebug () << color[0]<<color[1]<<color[2];
 }

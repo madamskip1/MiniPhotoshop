@@ -5,11 +5,13 @@
 	<file>resources/menu/brush.png</file>
 	<file>resources/menu/crop.png</file>
 	<file>resources/menu/draw.png</file>
-	<file>resources/menu/fil.png</file>
+	<file>resources/menu/fill.png</file>
 	<file>resources/menu/move.png</file>
 	<file>resources/menu/picker.png</file>
 	<file>resources/menu/rubber.png</file>
 	<file>resources/menu/select.png</file>
 	<file>resources/menu/text.png</file>
+	<file>resources/menu/zoomin.png</file>
+	<file>resources/menu/zoomout.png</file>
 </qresource>
 </RCC>
