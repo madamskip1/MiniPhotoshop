@@ -1,6 +1,13 @@
 #include "mouse.h"
 #include <QDebug>
 
+/**
+ * @brief Mouse::Mouse constructor
+ *
+ * Initalize displayLabel and image. Subscribe signals from mouse.
+ * @param dl DisplayImageLabel where image will be displayed.
+ * @param img reference to image
+ */
 Mouse::Mouse(DisplayImageLabel* dl, Image* img) :
     displayLabel(dl), image(img)
 {
@@ -10,16 +17,37 @@ Mouse::Mouse(DisplayImageLabel* dl, Image* img) :
     connect(displayLabel, &DisplayImageLabel::mouseLeftRelease, this, &Mouse::mouseRelease);
 }
 
+/**
+ * @brief Mouse::~Mouse destructor.
+ */
 Mouse::~Mouse()
 {
 
 }
 
-void Mouse::setSize(int)
-{
+/**
+ * @brief Mouse::setSize set cursor's size.
+ *
+ * Set size for cursor.
+ * For square size is distance between border and cursor point.
+ * For circle size is circle's radius (from cursor point).
+ * @param _size
+ */
 
+void Mouse::setSize(int _size)
+{
+    size = _size;
 }
 
+
+/**
+ * @brief Mouse::calcMinMax - calculate minMax Scalar
+ *
+ * Calculate minimum and maximum position for cursor.
+ * From 0 to image width or height.
+ * @param minMax precalculated values.
+ * @return cv::Scalar new minMax values
+ */
 cv::Scalar Mouse::calcMinMax(cv::Scalar minMax)
 {
     if (!image->isImgAreaX(minMax[0]))
@@ -63,6 +91,14 @@ cv::Scalar Mouse::calcMinMax(cv::Scalar minMax)
     return minMax;
 }
 
+/**
+ * @brief Mouse::isMinMax - minMax validator.
+ *
+ * Check if  minMax calculated in calcMinMax() is valid.
+ * @param minMax cv::Scalar calculated in calcMinMax()
+ * @return True if minMax is valid, else false
+ * @sa calcMinMax()
+ */
 bool Mouse::isMinMax(cv::Scalar minMax)
 {
     for (int i = 0; i < 4; i++)
@@ -72,47 +108,70 @@ bool Mouse::isMinMax(cv::Scalar minMax)
     return true;
 }
 
+/**
+ * @brief Mouse::leftClick - mouse's left button click event.
+ *
+ * Virtual member function. Triggered when left click mouse on the image.
+ * @param x mouse's coord
+ * @param y mouse's coord
+ */
 void Mouse::leftClick(int, int)
 {
 
 }
 
+/**
+ * @brief Mouse::leftMove - mouse's move with left button clicked.
+ *
+ * Virtual member function. Triggered when moving mouse with left button pressed.
+ * @param x mouse's coord
+ * @param y mouse's coord
+ */
 void Mouse::leftMove(int, int)
 {
 
 }
 
+/**
+ * @brief Mouse::leftRelease - mouse's left button release event.
+ *
+ * Virutal member function. Triggered after left button released.
+ * @param x mouse's coord (int)
+ * @param y mouse's coord (int)
+ */
 void Mouse::leftRelease(int, int)
 {
 
 }
 
+
+/**
+ * @brief Mouse::mousePressed - mouse pressed slot.
+ *
+ * Slot  that receives the signal after clicking
+ * the mouse. Then it calls functions leftClick().
+ * @param ev QMouseEvent mouse's event
+ *
+ * @sa leftClick()
+ */
 void Mouse::mousePressed(QMouseEvent * ev)
 {
-    //cv::Mat img = image->getImg();
     int x = ev->x();
     int y = ev->y();
 
     leftClick(x, y);
     return;
-//    rubber(x, y);
-
-//    image->display();
-//    return;
-    cv::Mat img = image->getImg();
-    cv::Mat overlay;
-    double alpha = 0.4;
-    img.copyTo(overlay);
-
-    cv::Point* p = new cv::Point(x, y);
-    cv::Scalar* s = new cv::Scalar(210,0,50,1);
-
-    cv::circle(overlay, *p, 30, *s, -1);
-    cv::addWeighted(overlay, alpha, img, 1-alpha, 0, img);
-
-    image->display();
 }
 
+/**
+ * @brief Mouse::mouseMoved - mouse moved slot.
+ *
+ * Slot that receives the signal after moving
+ * the mouse. Then it calls functions leftMove().
+ * @param ev QMouseEvent mouse's event
+ *
+ * @sa leftMove()
+ */
 void Mouse::mouseMoved(QMouseEvent * ev)
 {
     int x = ev->x();
@@ -121,55 +180,21 @@ void Mouse::mouseMoved(QMouseEvent * ev)
     if(ev->buttons() & Qt::LeftButton) leftMove(x, y);
 
     return;
-    if(!(ev->buttons() & Qt::LeftButton)) return;
-    cv::Mat img = image->getImg();
-
-
-    //rubber(x, y);
-
-    //image->display();
-  //  return;
-
-    cv::Mat overlay;
-    double alpha = 0.4;
-    img.copyTo(overlay);
-
-    cv::Point* p = new cv::Point(x, y);
-    cv::Scalar* s = new cv::Scalar(0,0,0,1);
-
-    cv::circle(overlay, *p, 30, *s, -1);
-    cv::addWeighted(overlay, alpha, img, 1-alpha, 0, img);
-
-    image->display();
 }
 
+/**
+ * @brief Mouse::mouseRelease - mouse released slot.
+ *
+ * Slot that receives the signal after release
+ * mouse button. Then it calls functions leftRelease().
+ * @param ev QMouseEvent mouse's event
+ *
+ * @sa leftRelease()
+ */
 void Mouse::mouseRelease(QMouseEvent * ev)
 {
     int x = ev->x();
     int y = ev->y();
 
     leftRelease(x, y);
-}
-
-void Mouse::rubber(int x, int y)
-{
-    qDebug() << "Rubber: (" << x << ", " << y<<")";
-
-    int size = 20;
-    cv::Mat img = image->getImg();
-    for(int i = (x - size); i < (x + size); i++)
-    {
-        for (int j = (y - size); j < (y + size); j++)
-        {
-            int z = j * img.cols * img.channels() + i * img.channels();
-            img.data[z] = 50;
-            z++;
-            img.data[z] = 50;
-            z++;
-            img.data[z] = 50;
-            z++;
-            img.data[z] = 0;
-        }
-    }
-
 }

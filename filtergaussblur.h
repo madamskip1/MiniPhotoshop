@@ -5,18 +5,18 @@
 
 class FilterGaussBlur : public Filter
 {
+private:
+    QSpinBox * sizeValBox;  /**< reference to size input */
+    QSpinBox * devValBox;   /**< reference to deviation input */
 public:
     FilterGaussBlur(Image* _img, QWidget *parent = nullptr);
 
 private slots:
     void applyFilter();
-    void check_Odd();
 
 private:
     void createOptionBox();
 
-    QSpinBox * sizeValBox;
-    QSpinBox * devValBox;
 };
 
 #endif // FILTERGAUSSBLUR_H

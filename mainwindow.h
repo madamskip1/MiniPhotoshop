@@ -13,8 +13,11 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-public slots:
-    void DisplayImage(QString);
+private:
+    Ui::MainWindow *ui;
+    Image * mainImg;    /**< active image */
+    Mouse * mouse;      /**< handle mouse events */
+
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -50,10 +53,9 @@ private slots:
 
     void on_actionCircle_2_triggered();
 
-private:
-    Ui::MainWindow *ui;
-    Image * mainImg;
-    Mouse * mouse;
+    void on_drawButton_clicked();
+
+
 };
 
 #endif // MAINWINDOW_H

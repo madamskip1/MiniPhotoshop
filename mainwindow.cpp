@@ -19,16 +19,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setCentralWidget(ui->display_image);
-
+    ui->mainWidget->setLayout(ui->horizontalLayout);
+    this->setCentralWidget(ui->mainWidget);
     ui->display_image->setText("qweq");
+    ui->menu->setLayout(ui->menuGrid);
+
+    // Create Image object. Load default img.
     mainImg = new Image();
     mainImg->setPath("D:\\Download\\img.jpg");
     mainImg->setDisplay(ui->display_image);
     mainImg->load();
     mainImg->display();
-   // Mouse * mouse = new Mouse(this->ui->display_image, mainImg);
-//    connect(ui->display_image, &DisplayImageLabel::mouseLeftClick, mouse, &Mouse::mousePressed);
 }
 
 MainWindow::~MainWindow()
@@ -36,20 +37,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::DisplayImage(QString fileName)
-{
-    Mat img;
-    img = imread(fileName.toStdString());
-    cvtColor(img, img, cv::COLOR_BGR2RGB);
-    QImage imdisplay((uchar*)img.data, img.cols, img.rows, img.step, QImage::Format_RGB888);
-    ui->display_image->setPixmap(QPixmap::fromImage(imdisplay));
-}
-
 void MainWindow::on_actionOpen_file_triggered()
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Otwórz plik");
     if(fileName == "") return;
-    //mainImg = new Image(fileName, ui->display_image);
+
     mainImg->setPath(fileName);
     mainImg->setDisplay(ui->display_image);
     mainImg->load();
@@ -135,4 +127,9 @@ void MainWindow::on_actionCircle_2_triggered()
 {
     delete mouse;
     mouse = new Draw(ui->display_image, mainImg, Shapes::Circle);
+}
+
+void MainWindow::on_drawButton_clicked()
+{
+    qDebug() << "Draw clicked";
 }

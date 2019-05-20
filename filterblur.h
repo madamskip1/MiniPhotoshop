@@ -5,6 +5,8 @@
 #include <QGridLayout>
 class FilterBlur : public Filter
 {
+private:
+    QSpinBox * valBox;  /**< reference to size input */
 public:
     FilterBlur(Image* _img, QWidget *parent = nullptr);
 
@@ -13,8 +15,6 @@ private slots:
 
 private:
     void createOptionBox();
-
-    QSpinBox * valBox;
 };
 
 #endif // FILTER_BLUR_H

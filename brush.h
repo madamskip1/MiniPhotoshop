@@ -6,12 +6,9 @@
 class Brush : public Mouse
 {
 private:
-    double opacity;
-    int size;
+    double opacity; /**< Brush opacity (alpha channel) */
 public:
-    Brush(DisplayImageLabel*, Image*);
-    void setSize(int);
-
+    Brush(DisplayImageLabel*, Image*, int = 0, double = 1.0);
 private:
     void leftClick(int, int);
     void leftMove(int, int);

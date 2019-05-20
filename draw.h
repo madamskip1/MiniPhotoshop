@@ -7,8 +7,8 @@
 class Draw : public Mouse
 {
 private:
-    cv::Point startPoint;
-    Shapes shape;
+    cv::Point startPoint; /**< Mouse click coords */
+    Shapes shape;   /**< enum to determinate shape to draw */
     cv::Scalar color;
 public:
     Draw(DisplayImageLabel*, Image*, Shapes = Shapes::Square);
