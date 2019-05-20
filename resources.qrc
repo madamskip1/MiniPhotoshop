@@ -1,0 +1,15 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>resources/menu.png</file>
+	<file>resources/menu_transparent.png</file>
+	<file>resources/menu/brush.png</file>
+	<file>resources/menu/crop.png</file>
+	<file>resources/menu/draw.png</file>
+	<file>resources/menu/fil.png</file>
+	<file>resources/menu/move.png</file>
+	<file>resources/menu/picker.png</file>
+	<file>resources/menu/rubber.png</file>
+	<file>resources/menu/select.png</file>
+	<file>resources/menu/text.png</file>
+</qresource>
+</RCC>
