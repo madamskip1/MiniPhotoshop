@@ -9,5 +9,6 @@ var files_dup =
     [ "image.h", "image_8h_source.html", null ],
     [ "mainwindow.h", "mainwindow_8h_source.html", null ],
     [ "mouse.h", "mouse_8h_source.html", null ],
+    [ "picker.h", "picker_8h_source.html", null ],
     [ "rubber.h", "rubber_8h_source.html", null ]
 ];

@@ -40,12 +40,25 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/**
+ * @brief MainWindow::deleteMouse
+ *
+ * Turn off mouse draw/brush etc cursor. Make image non-clickable.
+ */
 void MainWindow::deleteMouse()
 {
     delete mouse;
     mouse = nullptr;
 }
 
+/**
+ * @brief MainWindow::setColor
+ *
+ * Set color for brushes, draw etc. Change picker (sidebar) color.
+ * @param r red channel
+ * @param g green channel
+ * @param b blue channel
+ */
 void MainWindow::setColor(int r, int g, int b)
 {
     QString style = "background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");";
@@ -55,6 +68,14 @@ void MainWindow::setColor(int r, int g, int b)
     color = cv::Scalar(b, g, r, 255);
 }
 
+/**
+ * @brief MainWindow::colorPick
+ *
+ * Slot for colorPicked signal.
+ * @param r
+ * @param g
+ * @param b
+ */
 void MainWindow::colorPick(int r, int g, int b)
 {
    setColor(r, g, b);

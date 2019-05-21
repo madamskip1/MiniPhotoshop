@@ -9,5 +9,6 @@ var annotated_dup =
     [ "Image", "class_image.html", "class_image" ],
     [ "MainWindow", "class_main_window.html", "class_main_window" ],
     [ "Mouse", "class_mouse.html", "class_mouse" ],
+    [ "Picker", "class_picker.html", "class_picker" ],
     [ "Rubber", "class_rubber.html", "class_rubber" ]
 ];

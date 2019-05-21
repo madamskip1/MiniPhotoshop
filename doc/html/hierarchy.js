@@ -12,6 +12,7 @@ var hierarchy =
       [ "Mouse", "class_mouse.html", [
         [ "Brush", "class_brush.html", null ],
         [ "Draw", "class_draw.html", null ],
+        [ "Picker", "class_picker.html", null ],
         [ "Rubber", "class_rubber.html", null ]
       ] ]
     ] ],

@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "bcdfgilmors~",
-  1: "bdfimr",
-  2: "bcdfgilms~",
+  0: "bcdfgilmoprs~",
+  1: "bdfimpr",
+  2: "bcdfgilmps~",
   3: "dios"
 };
 

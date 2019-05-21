@@ -8,7 +8,6 @@
  */
 DisplayImageLabel::DisplayImageLabel(QWidget *parent) : QLabel(parent)
 {
-    this->setText("qweqweqw");
 }
 
 /**
