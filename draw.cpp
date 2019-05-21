@@ -1,10 +1,8 @@
 #include "draw.h"
 
-Draw::Draw(DisplayImageLabel* dl, Image* img, cv::Scalar _color, Shapes _shape) :
+Draw::Draw(DisplayImageLabel* dl, Image* img, cv::Scalar* _color, Shapes _shape = Shapes::Square) :
     Mouse(dl, img),  shape(_shape), color(_color)
 {
-    qDebug() << "draw" << _color[0] << _color[1]<<_color[2];
-    qDebug() << "Draw: on";
 }
 
 /**
@@ -42,6 +40,7 @@ void Draw::leftMove(int x, int y)
         drawRectangle(tempMat, p);
         break;
     case Shapes::Circle:
+    default:
         drawCircle(tempMat, p);
         break;
     }
@@ -66,6 +65,7 @@ void Draw::leftRelease(int x, int y)
         drawRectangle(img, p);
         break;
     case Shapes::Circle:
+    default:
         drawCircle(img, p);
         break;
     }
@@ -81,7 +81,7 @@ void Draw::leftRelease(int x, int y)
  */
 void Draw::drawRectangle(cv::Mat img, cv::Point p)
 {
-    cv::rectangle(img, startPoint, p, color, -1);
+    cv::rectangle(img, startPoint, p, *color, -1);
 }
 
 /**
@@ -97,10 +97,10 @@ void Draw::drawCircle(cv::Mat img, cv::Point p)
     int deltaY = p.y - startPoint.y;
     int radius = sqrt((deltaX * deltaX) + (deltaY * deltaY));
 
-    cv::circle(img, startPoint, radius, color, -1);
+    cv::circle(img, startPoint, radius, *color, -1);
 }
 
-void Draw::drawEllipse(cv::Mat img, cv::Point p)
-{
+//void Draw::drawEllipse(cv::Mat img, cv::Point p)
+//{
 
-}
+//}

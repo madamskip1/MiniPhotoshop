@@ -35,6 +35,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         mouse.cpp \
+        picker.cpp \
         rubber.cpp
 
 HEADERS += \
@@ -47,6 +48,7 @@ HEADERS += \
         image.h \
         mainwindow.h \
         mouse.h \
+        picker.h \
         rubber.h
 
 FORMS += \

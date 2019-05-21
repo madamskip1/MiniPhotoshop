@@ -7,7 +7,6 @@
  */
 Image::Image()
 {
-    qDebug() << "Image::Image()";
     qtImg = nullptr;
 }
 
@@ -37,7 +36,11 @@ void Image::loadImg()
     img = cv::imread(path.toStdString());
     width = img.cols;
     height = img.rows;
-    qDebug() << width << " - " << height;
+    if(displayLabel != nullptr)
+    {
+        displayLabel->setFixedSize(width, height);
+        displayLabel->setAlignment(Qt::AlignCenter);
+    }
     cv::cvtColor(img,img, cv::COLOR_BGR2BGRA);
 }
 

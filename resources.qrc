@@ -2,6 +2,7 @@
 <qresource>
     <file>resources/menu.png</file>
 	<file>resources/menu_transparent.png</file>
+	<file>resources/transparent-background.png</file>
 	<file>resources/menu/brush.png</file>
 	<file>resources/menu/crop.png</file>
 	<file>resources/menu/draw.png</file>

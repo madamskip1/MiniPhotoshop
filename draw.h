@@ -9,9 +9,9 @@ class Draw : public Mouse
 private:
     cv::Point startPoint; /**< Mouse click coords */
     Shapes shape;   /**< enum to determinate shape to draw */
-    cv::Scalar color;
+    cv::Scalar* color;
 public:
-    Draw(DisplayImageLabel*, Image*, cv::Scalar=cv::Scalar(255, 255, 255), Shapes = Shapes::Square);
+    Draw(DisplayImageLabel*, Image*, cv::Scalar*, Shapes);
 
 private:
     void leftClick(int, int);
@@ -20,7 +20,7 @@ private:
 
     void drawRectangle(cv::Mat, cv::Point);
     void drawCircle(cv::Mat, cv::Point);
-    void drawEllipse(cv::Mat, cv::Point);
+//    void drawEllipse(cv::Mat, cv::Point);
 };
 
 #endif // DRAW_H

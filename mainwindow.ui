@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1012</width>
-    <height>747</height>
+    <width>1047</width>
+    <height>750</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,10 @@
    <widget class="QWidget" name="mainWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>10</y>
-      <width>781</width>
-      <height>721</height>
+      <x>10</x>
+      <y>0</y>
+      <width>391</width>
+      <height>731</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -34,11 +34,14 @@
       <rect>
        <x>30</x>
        <y>30</y>
-       <width>331</width>
-       <height>639</height>
+       <width>291</width>
+       <height>591</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
@@ -328,8 +331,7 @@ background-color: rgb(255, 0, 0);</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image: url(:/resources/menu/picker.png);
-background-color: rgb(255, 0, 0);</string>
+             <string notr="true">background-image: url(:/resources/menu/picker.png);</string>
             </property>
             <property name="text">
              <string/>
@@ -389,25 +391,66 @@ background-color: black;</string>
          </widget>
         </item>
         <item>
-         <widget class="DisplayImageLabel" name="display_image">
-          <property name="mouseTracking">
-           <bool>true</bool>
-          </property>
-          <property name="focusPolicy">
-           <enum>Qt::NoFocus</enum>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
+         <widget class="QWidget" name="displayWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(154, 154, 154)</string>
+           <string notr="true">background-color: rgb(157, 157, 157);</string>
           </property>
-          <property name="frameShape">
-           <enum>QFrame::WinPanel</enum>
-          </property>
-          <property name="text">
-           <string>display_image</string>
-          </property>
+          <widget class="QWidget" name="horizontalLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>100</y>
+             <width>111</width>
+             <height>261</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="displayLayout">
+            <item>
+             <widget class="DisplayImageLabel" name="display_image">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="mouseTracking">
+               <bool>true</bool>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-image: url(:/resources/transparent-background.png);
+border: 1px solid transparent;</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::WinPanel</enum>
+              </property>
+              <property name="text">
+               <string>display_image</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -421,7 +464,7 @@ background-color: black;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1012</width>
+     <width>1047</width>
      <height>26</height>
     </rect>
    </property>
@@ -444,12 +487,6 @@ background-color: black;</string>
      <string>Inne</string>
     </property>
     <addaction name="actionCanny"/>
-   </widget>
-   <widget class="QMenu" name="menutest">
-    <property name="title">
-     <string>test</string>
-    </property>
-    <addaction name="actiontest"/>
    </widget>
    <widget class="QMenu" name="menuBrush">
     <property name="title">
@@ -482,18 +519,10 @@ background-color: black;</string>
     <addaction name="separator"/>
     <addaction name="actionOff"/>
    </widget>
-   <widget class="QMenu" name="menucolorPicker">
-    <property name="title">
-     <string>colorPicker</string>
-    </property>
-    <addaction name="actionpicke"/>
-   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilters"/>
    <addaction name="menuInne"/>
-   <addaction name="menutest"/>
    <addaction name="menuBrush"/>
-   <addaction name="menucolorPicker"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionOpen_file">

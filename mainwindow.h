@@ -24,12 +24,15 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QImage imdisplay;
-    QTimer* Timer;
-
 private:
     void deleteMouse();
+    void setColor(int, int, int);
 
+public slots:
+    void colorPick(int, int, int);
 private slots:
+
+
     void on_actionOpen_file_triggered();
 
     void on_actionSave_as_triggered();
@@ -63,6 +66,7 @@ private slots:
     void on_rubberButton_clicked();
 
     void on_colorShow_clicked();
+    void on_pickerButton_clicked();
 };
 
 #endif // MAINWINDOW_H

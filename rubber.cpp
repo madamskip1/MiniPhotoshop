@@ -22,6 +22,7 @@ void Rubber::leftClick(int x, int y)
             squareRubber(x, y);
             break;
         case Shapes::Circle:
+        default:
             circleRubber(x, y);
             break;
     }
