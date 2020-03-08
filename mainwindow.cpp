@@ -22,14 +22,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->mainWidget->setLayout(ui->horizontalLayout);
     this->setCentralWidget(ui->mainWidget);
-    ui->display_image->setText("qweq");
     ui->displayWidget->setLayout(ui->displayLayout);
-    // Create Image object. Load default img.
+    ui->display_image->setText("");
+    // Create Image object.
     mainImg = new Image();
-    mainImg->setPath("D:\\Download\\img.jpg");
-    mainImg->setDisplay(ui->display_image);
-    mainImg->load();
-    mainImg->display();
 
     mouse = nullptr;
     setColor(0, 0, 0); // default color: black;
