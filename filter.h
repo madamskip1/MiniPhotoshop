@@ -12,35 +12,29 @@
 class Filter : public QDialog
 {
     Q_OBJECT
+private:
+    QDialogButtonBox* buttonBox; /**< Box with dialog buttons */
+    QPushButton* closeButton;
+    QPushButton* applyButton;
+    QLayout* layout;
+
+protected:
+    Image * img;
+    QString optionsBoxName;
+    QGroupBox* optionsBox; /**< Box with sliders, value input etc. */
+    QLayout* optionLayout;
+
 public:
     explicit Filter(QWidget *parent = nullptr);
-signals:
-
-public slots:
-
-protected slots:
-//    virtual void applyFilter()=0;
 
 private:
     void createButtonBox();
     virtual void createOptionBox()=0;
 
-    QDialogButtonBox* buttonBox;
-    QPushButton* closeButton;
-    QPushButton* applyButton;
-
-    QLayout* layout;
-
 protected slots:
     virtual void applyFilter()=0;
 protected:
     void createLayout();
-
-    Image * img;
-    QString optionsBoxName;
-
-    QGroupBox* optionsBox;
-    QLayout* optionLayout;
 };
 
 #endif // FILTER_H

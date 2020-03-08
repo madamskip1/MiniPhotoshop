@@ -35,6 +35,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         mouse.cpp \
+        picker.cpp \
         rubber.cpp
 
 HEADERS += \
@@ -47,21 +48,25 @@ HEADERS += \
         image.h \
         mainwindow.h \
         mouse.h \
+        picker.h \
         rubber.h
 
 FORMS += \
         mainwindow.ui
 
-INCLUDEPATH += C:\Programy\opencv\build\include
+INCLUDEPATH += $$PWD\lib\opencv\include
 
-LIBS += C:\Programy\opencv\build\bin\libopencv_core401.dll
-LIBS += C:\Programy\opencv\build\bin\libopencv_highgui401.dll
-LIBS += C:\Programy\opencv\build\bin\libopencv_imgcodecs401.dll
-LIBS += C:\Programy\opencv\build\bin\libopencv_imgproc401.dll
-LIBS += C:\Programy\opencv\build\bin\libopencv_features2d401.dll
-LIBS += C:\Programy\opencv\build\bin\libopencv_calib3d401.dll
+LIBS += $$PWD\lib\opencv\bin\libopencv_core420.dll
+LIBS += $$PWD\lib\opencv\bin\libopencv_highgui420.dll
+LIBS += $$PWD\lib\opencv\bin\libopencv_imgcodecs420.dll
+LIBS += $$PWD\lib\opencv\bin\libopencv_imgproc420.dll
+LIBS += $$PWD\lib\opencv\bin\libopencv_features2d420.dll
+LIBS += $$PWD\lib\opencv\bin\libopencv_calib3d420.dll
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

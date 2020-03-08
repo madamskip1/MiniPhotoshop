@@ -1,0 +1,260 @@
+\hypertarget{class_mouse}{}\section{Mouse Class Reference}
+\label{class_mouse}\index{Mouse@{Mouse}}
+
+
+Inherits Q\+Label.
+
+
+
+Inherited by \mbox{\hyperlink{class_brush}{Brush}}, \mbox{\hyperlink{class_draw}{Draw}}, \mbox{\hyperlink{class_picker}{Picker}}, and \mbox{\hyperlink{class_rubber}{Rubber}}.
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mouse_a75f0d490d499fd2a2593d42fcd177759}{mouse\+Pressed}} (Q\+Mouse\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_a75f0d490d499fd2a2593d42fcd177759}{Mouse\+::mouse\+Pressed}} -\/ mouse pressed slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mouse_ad1906d0601ba2979128c918a1b4e0a6a}{mouse\+Moved}} (Q\+Mouse\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_ad1906d0601ba2979128c918a1b4e0a6a}{Mouse\+::mouse\+Moved}} -\/ mouse moved slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mouse_a52cf37734cdd4d34f3929e0828a6f94d}{mouse\+Release}} (Q\+Mouse\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_a52cf37734cdd4d34f3929e0828a6f94d}{Mouse\+::mouse\+Release}} -\/ mouse released slot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mouse_a0b9f53479872fe8bb342632d354fb46e}{Mouse}} (\mbox{\hyperlink{class_display_image_label}{Display\+Image\+Label}} $\ast$, \mbox{\hyperlink{class_image}{Image}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_a0b9f53479872fe8bb342632d354fb46e}{Mouse\+::\+Mouse}} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mouse_afdf7d8abef29c10be77ead773f964f4f}\label{class_mouse_afdf7d8abef29c10be77ead773f964f4f}} 
+\mbox{\hyperlink{class_mouse_afdf7d8abef29c10be77ead773f964f4f}{$\sim$\+Mouse}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_afdf7d8abef29c10be77ead773f964f4f}{Mouse\+::$\sim$\+Mouse}} destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_mouse_adac1d60637770e2739f06ac6f1f88b7b}{set\+Size}} (int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_adac1d60637770e2739f06ac6f1f88b7b}{Mouse\+::set\+Size}} set cursor\textquotesingle{}s size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Scalar \mbox{\hyperlink{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}{calc\+Min\+Max}} (cv\+::\+Scalar)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}{Mouse\+::calc\+Min\+Max}} -\/ calculate min\+Max Scalar. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mouse_a0f6dd164ad2b506a001d23d4f67dbcec}{is\+Min\+Max}} (cv\+::\+Scalar)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_a0f6dd164ad2b506a001d23d4f67dbcec}{Mouse\+::is\+Min\+Max}} -\/ min\+Max validator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_mouse_a186e5b7ddfbb4681326286509a064d28}{left\+Click}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_a186e5b7ddfbb4681326286509a064d28}{Mouse\+::left\+Click}} -\/ mouse\textquotesingle{}s left button click event. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_mouse_a809fe39af5186e39a5768fb6bb06da56}{left\+Move}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_a809fe39af5186e39a5768fb6bb06da56}{Mouse\+::left\+Move}} -\/ mouse\textquotesingle{}s move with left button clicked. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_mouse_a837d20f61ecb374f5b9c789cc141983e}{left\+Release}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_mouse_a837d20f61ecb374f5b9c789cc141983e}{Mouse\+::left\+Release}} -\/ mouse\textquotesingle{}s left button release event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_display_image_label}{Display\+Image\+Label}} $\ast$ \mbox{\hyperlink{class_mouse_a24d49b322c8d63c9805975b316753999}{display\+Label}}
+\item 
+\mbox{\hyperlink{class_image}{Image}} $\ast$ \mbox{\hyperlink{class_mouse_ac4431c10f6f337649de7cc643d8d01fc}{image}}
+\item 
+int \mbox{\hyperlink{class_mouse_ad6bd34e208f4050da3e1fd4e0cfcea62}{size}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mouse_a0b9f53479872fe8bb342632d354fb46e}\label{class_mouse_a0b9f53479872fe8bb342632d354fb46e}} 
+\index{Mouse@{Mouse}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{Mouse()}{Mouse()}}
+{\footnotesize\ttfamily Mouse\+::\+Mouse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_display_image_label}{Display\+Image\+Label}} $\ast$}]{dl,  }\item[{\mbox{\hyperlink{class_image}{Image}} $\ast$}]{img }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_mouse_a0b9f53479872fe8bb342632d354fb46e}{Mouse\+::\+Mouse}} constructor. 
+
+Initalize display\+Label and image. Subscribe signals from mouse. 
+\begin{DoxyParams}{Parameters}
+{\em dl} & \mbox{\hyperlink{class_display_image_label}{Display\+Image\+Label}} where image will be displayed. \\
+\hline
+{\em img} & reference to image \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}\label{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}} 
+\index{Mouse@{Mouse}!calcMinMax@{calcMinMax}}
+\index{calcMinMax@{calcMinMax}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{calcMinMax()}{calcMinMax()}}
+{\footnotesize\ttfamily cv\+::\+Scalar Mouse\+::calc\+Min\+Max (\begin{DoxyParamCaption}\item[{cv\+::\+Scalar}]{min\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}{Mouse\+::calc\+Min\+Max}} -\/ calculate min\+Max Scalar. 
+
+Calculate minimum and maximum position for cursor. From 0 to image width or height. 
+\begin{DoxyParams}{Parameters}
+{\em min\+Max} & precalculated values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cv\+::\+Scalar new min\+Max values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_mouse_a0f6dd164ad2b506a001d23d4f67dbcec}\label{class_mouse_a0f6dd164ad2b506a001d23d4f67dbcec}} 
+\index{Mouse@{Mouse}!isMinMax@{isMinMax}}
+\index{isMinMax@{isMinMax}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{isMinMax()}{isMinMax()}}
+{\footnotesize\ttfamily bool Mouse\+::is\+Min\+Max (\begin{DoxyParamCaption}\item[{cv\+::\+Scalar}]{min\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{class_mouse_a0f6dd164ad2b506a001d23d4f67dbcec}{Mouse\+::is\+Min\+Max}} -\/ min\+Max validator. 
+
+Check if min\+Max calculated in \mbox{\hyperlink{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}{calc\+Min\+Max()}} is valid. 
+\begin{DoxyParams}{Parameters}
+{\em min\+Max} & cv\+::\+Scalar calculated in \mbox{\hyperlink{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}{calc\+Min\+Max()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if min\+Max is valid, else false 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_mouse_ad1e0ab2dbcf1172d7969b50b8a770060}{calc\+Min\+Max()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_mouse_a186e5b7ddfbb4681326286509a064d28}\label{class_mouse_a186e5b7ddfbb4681326286509a064d28}} 
+\index{Mouse@{Mouse}!leftClick@{leftClick}}
+\index{leftClick@{leftClick}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{leftClick()}{leftClick()}}
+{\footnotesize\ttfamily void Mouse\+::left\+Click (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_mouse_a186e5b7ddfbb4681326286509a064d28}{Mouse\+::left\+Click}} -\/ mouse\textquotesingle{}s left button click event. 
+
+Virtual member function. Triggered when left click mouse on the image. 
+\begin{DoxyParams}{Parameters}
+{\em x} & mouse\textquotesingle{}s coord \\
+\hline
+{\em y} & mouse\textquotesingle{}s coord \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mouse_a809fe39af5186e39a5768fb6bb06da56}\label{class_mouse_a809fe39af5186e39a5768fb6bb06da56}} 
+\index{Mouse@{Mouse}!leftMove@{leftMove}}
+\index{leftMove@{leftMove}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{leftMove()}{leftMove()}}
+{\footnotesize\ttfamily void Mouse\+::left\+Move (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_mouse_a809fe39af5186e39a5768fb6bb06da56}{Mouse\+::left\+Move}} -\/ mouse\textquotesingle{}s move with left button clicked. 
+
+Virtual member function. Triggered when moving mouse with left button pressed. 
+\begin{DoxyParams}{Parameters}
+{\em x} & mouse\textquotesingle{}s coord \\
+\hline
+{\em y} & mouse\textquotesingle{}s coord \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mouse_a837d20f61ecb374f5b9c789cc141983e}\label{class_mouse_a837d20f61ecb374f5b9c789cc141983e}} 
+\index{Mouse@{Mouse}!leftRelease@{leftRelease}}
+\index{leftRelease@{leftRelease}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{leftRelease()}{leftRelease()}}
+{\footnotesize\ttfamily void Mouse\+::left\+Release (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_mouse_a837d20f61ecb374f5b9c789cc141983e}{Mouse\+::left\+Release}} -\/ mouse\textquotesingle{}s left button release event. 
+
+Virutal member function. Triggered after left button released. 
+\begin{DoxyParams}{Parameters}
+{\em x} & mouse\textquotesingle{}s coord (int) \\
+\hline
+{\em y} & mouse\textquotesingle{}s coord (int) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mouse_ad1906d0601ba2979128c918a1b4e0a6a}\label{class_mouse_ad1906d0601ba2979128c918a1b4e0a6a}} 
+\index{Mouse@{Mouse}!mouseMoved@{mouseMoved}}
+\index{mouseMoved@{mouseMoved}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{mouseMoved}{mouseMoved}}
+{\footnotesize\ttfamily void Mouse\+::mouse\+Moved (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_mouse_ad1906d0601ba2979128c918a1b4e0a6a}{Mouse\+::mouse\+Moved}} -\/ mouse moved slot. 
+
+Slot that receives the signal after moving the mouse. Then it calls functions \mbox{\hyperlink{class_mouse_a809fe39af5186e39a5768fb6bb06da56}{left\+Move()}}. 
+\begin{DoxyParams}{Parameters}
+{\em ev} & Q\+Mouse\+Event mouse\textquotesingle{}s event\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_mouse_a809fe39af5186e39a5768fb6bb06da56}{left\+Move()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_mouse_a75f0d490d499fd2a2593d42fcd177759}\label{class_mouse_a75f0d490d499fd2a2593d42fcd177759}} 
+\index{Mouse@{Mouse}!mousePressed@{mousePressed}}
+\index{mousePressed@{mousePressed}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{mousePressed}{mousePressed}}
+{\footnotesize\ttfamily void Mouse\+::mouse\+Pressed (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_mouse_a75f0d490d499fd2a2593d42fcd177759}{Mouse\+::mouse\+Pressed}} -\/ mouse pressed slot. 
+
+Slot that receives the signal after clicking the mouse. Then it calls functions \mbox{\hyperlink{class_mouse_a186e5b7ddfbb4681326286509a064d28}{left\+Click()}}. 
+\begin{DoxyParams}{Parameters}
+{\em ev} & Q\+Mouse\+Event mouse\textquotesingle{}s event\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_mouse_a186e5b7ddfbb4681326286509a064d28}{left\+Click()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_mouse_a52cf37734cdd4d34f3929e0828a6f94d}\label{class_mouse_a52cf37734cdd4d34f3929e0828a6f94d}} 
+\index{Mouse@{Mouse}!mouseRelease@{mouseRelease}}
+\index{mouseRelease@{mouseRelease}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{mouseRelease}{mouseRelease}}
+{\footnotesize\ttfamily void Mouse\+::mouse\+Release (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_mouse_a52cf37734cdd4d34f3929e0828a6f94d}{Mouse\+::mouse\+Release}} -\/ mouse released slot. 
+
+Slot that receives the signal after release mouse button. Then it calls functions \mbox{\hyperlink{class_mouse_a837d20f61ecb374f5b9c789cc141983e}{left\+Release()}}. 
+\begin{DoxyParams}{Parameters}
+{\em ev} & Q\+Mouse\+Event mouse\textquotesingle{}s event\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_mouse_a837d20f61ecb374f5b9c789cc141983e}{left\+Release()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_mouse_adac1d60637770e2739f06ac6f1f88b7b}\label{class_mouse_adac1d60637770e2739f06ac6f1f88b7b}} 
+\index{Mouse@{Mouse}!setSize@{setSize}}
+\index{setSize@{setSize}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Mouse\+::set\+Size (\begin{DoxyParamCaption}\item[{int}]{\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_mouse_adac1d60637770e2739f06ac6f1f88b7b}{Mouse\+::set\+Size}} set cursor\textquotesingle{}s size. 
+
+Set size for cursor. For square size is distance between border and cursor point. For circle size is circle\textquotesingle{}s radius (from cursor point). 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+size} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_mouse_a24d49b322c8d63c9805975b316753999}\label{class_mouse_a24d49b322c8d63c9805975b316753999}} 
+\index{Mouse@{Mouse}!displayLabel@{displayLabel}}
+\index{displayLabel@{displayLabel}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{displayLabel}{displayLabel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_display_image_label}{Display\+Image\+Label}}$\ast$ Mouse\+::display\+Label\hspace{0.3cm}{\ttfamily [protected]}}
+
+ui element which display image \mbox{\Hypertarget{class_mouse_ac4431c10f6f337649de7cc643d8d01fc}\label{class_mouse_ac4431c10f6f337649de7cc643d8d01fc}} 
+\index{Mouse@{Mouse}!image@{image}}
+\index{image@{image}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image}{Image}}$\ast$ Mouse\+::image\hspace{0.3cm}{\ttfamily [protected]}}
+
+reference to active image \mbox{\Hypertarget{class_mouse_ad6bd34e208f4050da3e1fd4e0cfcea62}\label{class_mouse_ad6bd34e208f4050da3e1fd4e0cfcea62}} 
+\index{Mouse@{Mouse}!size@{size}}
+\index{size@{size}!Mouse@{Mouse}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int Mouse\+::size\hspace{0.3cm}{\ttfamily [protected]}}
+
+Square -\/ distance from cursor to border. Circle -\/ radius 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mouse.\+h\item 
+mouse.\+cpp\end{DoxyCompactItemize}

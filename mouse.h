@@ -19,6 +19,10 @@ class Mouse : public QLabel
 {
 Q_OBJECT
 
+protected:
+    DisplayImageLabel * displayLabel;   /**< ui element which display image */
+    Image* image;                       /**< reference to active image */
+    int size; /**< Square - distance from cursor to border. Circle - radius */
 signals:
   //  void mousePressed(QPoint*);
 public:
@@ -27,10 +31,7 @@ public:
 
     virtual void setSize(int);
 protected:
-    DisplayImageLabel * displayLabel;
-    Image* image;
     cv::Scalar calcMinMax(cv::Scalar);
-
     bool isMinMax(cv::Scalar);
     virtual void leftClick(int, int);
     virtual void leftMove(int, int);
@@ -39,8 +40,6 @@ public slots:
     void mousePressed(QMouseEvent*);
     void mouseMoved(QMouseEvent*);
     void mouseRelease(QMouseEvent*);
-private:
-    void rubber(int, int);
 };
 
 #endif // MOUSE_H

@@ -1,0 +1,26 @@
+var class_image =
+[
+    [ "Image", "class_image.html#a58edd1c45b4faeb5f789b0d036d02313", null ],
+    [ "Image", "class_image.html#aeb23ee6bbcab6102860403d6fa66565d", null ],
+    [ "cloneImg", "class_image.html#a5ed60b8ab5bece73fd951c3a23071c04", null ],
+    [ "display", "class_image.html#a1ab17bfa8eb3bd96e90febe0ebf6b6f2", null ],
+    [ "displaySlot", "class_image.html#a0d6d6b06c139bcecada54f98122ccb69", null ],
+    [ "getBackgroundColor", "class_image.html#ad27c80fa2dedc38a385b69fc587e80b1", null ],
+    [ "getDisplay", "class_image.html#a6d62147aced3396b08f0be7db6987732", null ],
+    [ "getHeight", "class_image.html#aa4e1f064e5e1f3f04ad605408f1ec3af", null ],
+    [ "getImg", "class_image.html#ad55c64e3ec01d2fb5f5568eff58abaf2", null ],
+    [ "getPath", "class_image.html#a7bf2bf3762aedf13b9a2fe924c2adb67", null ],
+    [ "getWidth", "class_image.html#af2720a072812763395512fc3c8c21362", null ],
+    [ "isImgArea", "class_image.html#aaaf159e089ee155ed25a44424f428506", null ],
+    [ "isImgAreaX", "class_image.html#a176645fd2b8695127beb87861a3bff05", null ],
+    [ "isImgAreaY", "class_image.html#ae54b7b084b648d561244ec047565c1fb", null ],
+    [ "isTransparent", "class_image.html#a2bfbc65ec280b866411462f7b452ce76", null ],
+    [ "load", "class_image.html#a183b754c660df8caed9088e9915606db", null ],
+    [ "save", "class_image.html#a643d9f46961e8372b6a573246aad66d1", null ],
+    [ "saveAs", "class_image.html#a6398f48fdb7e200dd237e37644cca406", null ],
+    [ "setBackgroundColor", "class_image.html#a4262b756a7298a7b6f5ad840c56b41e6", null ],
+    [ "setDisplay", "class_image.html#a2bdf1bb13666021cb46e0a886bba25f4", null ],
+    [ "setPath", "class_image.html#a00270889235de4a75a620c94e7b56682", null ],
+    [ "setTransparent", "class_image.html#a52e45825bdd0de9b53c36b1a80936cca", null ],
+    [ "setTransparent", "class_image.html#aa33101892a02308ad3de2f7eaf22a7a5", null ]
+];

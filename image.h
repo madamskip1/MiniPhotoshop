@@ -8,15 +8,13 @@
 class Image
 {
 private:
-    QString name;
-    QString format;
     QString path;
     cv::Mat img;
     cv::Mat imgRgb;
     QImage * qtImg;
     QLabel* displayLabel;
     cv::Scalar backgroundColor;
-    bool transparent = false;
+    bool transparent = false;   /**< is background transparent? */
     int width, height;
 
     void loadImg();

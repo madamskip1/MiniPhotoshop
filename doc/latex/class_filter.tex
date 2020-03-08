@@ -1,0 +1,86 @@
+\hypertarget{class_filter}{}\section{Filter Class Reference}
+\label{class_filter}\index{Filter@{Filter}}
+
+
+Inherits Q\+Dialog.
+
+
+
+Inherited by \mbox{\hyperlink{class_filter_blur}{Filter\+Blur}}, and \mbox{\hyperlink{class_filter_gauss_blur}{Filter\+Gauss\+Blur}}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_filter_a24f108385782efbcc0b7f9cc96506322}{Filter}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_filter_a24f108385782efbcc0b7f9cc96506322}{Filter\+::\+Filter}} a constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_filter_a82bf0de80a320ff1500b0d7d7f857897}\label{class_filter_a82bf0de80a320ff1500b0d7d7f857897}} 
+virtual void {\bfseries apply\+Filter} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_filter_a693e18ecd85c957363367e636f8ba2e7}{create\+Layout}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_filter_a693e18ecd85c957363367e636f8ba2e7}{Filter\+::create\+Layout}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_filter_a78f2ab4ea523dd9331037a0945925787}\label{class_filter_a78f2ab4ea523dd9331037a0945925787}} 
+\mbox{\hyperlink{class_image}{Image}} $\ast$ {\bfseries img}
+\item 
+\mbox{\Hypertarget{class_filter_aa2a3b2b2d75db670a3fb5bb5d2366236}\label{class_filter_aa2a3b2b2d75db670a3fb5bb5d2366236}} 
+Q\+String {\bfseries options\+Box\+Name}
+\item 
+Q\+Group\+Box $\ast$ \mbox{\hyperlink{class_filter_a348bf61449dd88f17d9cb36b2b7881e0}{options\+Box}}
+\item 
+\mbox{\Hypertarget{class_filter_aef01c179534e8b25e35df01ba446079e}\label{class_filter_aef01c179534e8b25e35df01ba446079e}} 
+Q\+Layout $\ast$ {\bfseries option\+Layout}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_filter_a24f108385782efbcc0b7f9cc96506322}\label{class_filter_a24f108385782efbcc0b7f9cc96506322}} 
+\index{Filter@{Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!Filter@{Filter}}
+\subsubsection{\texorpdfstring{Filter()}{Filter()}}
+{\footnotesize\ttfamily Filter\+::\+Filter (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_filter_a24f108385782efbcc0b7f9cc96506322}{Filter\+::\+Filter}} a constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_filter_a693e18ecd85c957363367e636f8ba2e7}\label{class_filter_a693e18ecd85c957363367e636f8ba2e7}} 
+\index{Filter@{Filter}!createLayout@{createLayout}}
+\index{createLayout@{createLayout}!Filter@{Filter}}
+\subsubsection{\texorpdfstring{createLayout()}{createLayout()}}
+{\footnotesize\ttfamily void Filter\+::create\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{class_filter_a693e18ecd85c957363367e636f8ba2e7}{Filter\+::create\+Layout}}. 
+
+Create layout with options box and buttons box. Set size. Set title. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_filter_a348bf61449dd88f17d9cb36b2b7881e0}\label{class_filter_a348bf61449dd88f17d9cb36b2b7881e0}} 
+\index{Filter@{Filter}!optionsBox@{optionsBox}}
+\index{optionsBox@{optionsBox}!Filter@{Filter}}
+\subsubsection{\texorpdfstring{optionsBox}{optionsBox}}
+{\footnotesize\ttfamily Q\+Group\+Box$\ast$ Filter\+::options\+Box\hspace{0.3cm}{\ttfamily [protected]}}
+
+Box with sliders, value input etc. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+filter.\+h\item 
+filter.\+cpp\end{DoxyCompactItemize}
